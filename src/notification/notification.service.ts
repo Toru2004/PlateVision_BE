@@ -20,14 +20,15 @@ export class NotificationService {
         body: notification.body,
       },
       data: {
-        click_action: 'FLUTTER_NOTIFICATION_CLICK',
+        click_action: 'CANHBAO_ACTIVITY',
+        route: 'home',
       },
       android: {
         priority: 'high' as const,
         notification: {
           sound: 'default',
           channelId: 'default',
-          clickAction: 'FLUTTER_NOTIFICATION_CLICK',
+          clickAction: 'CANHBAO_ACTIVITY',
         },
       },
       apns: {
@@ -38,7 +39,7 @@ export class NotificationService {
           aps: {
             contentAvailable: true,
             sound: 'default',
-            category: 'FLUTTER_NOTIFICATION_CLICK',
+            category: 'CANHBAO_ACTIVITY',
           },
         },
       },

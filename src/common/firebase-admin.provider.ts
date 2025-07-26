@@ -17,6 +17,7 @@ export const FirebaseAdminProvider: Provider = {
             .get<string>('FIREBASE_PRIVATE_KEY')
             ?.replace(/\\n/g, '\n'),
         }),
+        databaseURL: configService.get<string>('FIREBASE_DATABASE_URL'),
       });
     }
 
