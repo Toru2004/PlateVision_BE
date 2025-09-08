@@ -13,14 +13,14 @@ import { FirebaseAdminModule } from './common/firebase-admin.module';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-    MongooseModule.forRootAsync({
-      imports: [ConfigModule],
-      useFactory: async (configService: NestConfigService) => {
-        const uri = configService.get<string>('MONGO_URI');
-        return { uri };
-      },
-      inject: [NestConfigService],
-    }),
+    // MongooseModule.forRootAsync({
+    //   imports: [ConfigModule],
+    //   useFactory: async (configService: NestConfigService) => {
+    //     const uri = configService.get<string>('MONGO_URI');
+    //     return { uri };
+    //   },
+    //   inject: [NestConfigService],
+    // }),
     // ConfigModule,
     NotificationModule,
     FirebaseAdminModule
