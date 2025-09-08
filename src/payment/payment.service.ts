@@ -136,7 +136,7 @@ export class PaymentService {
         const userId = order?.userid ?? '';
         const luot = order?.soluot ?? 0;
         await this.updateSoLuot(userId, luot);
-        return { success: true, message: 'Thanh toán thành công', data: query };
+        return status;
       } else {
         paymentOrder = {
           ...paymentOrder,
@@ -152,7 +152,7 @@ export class PaymentService {
         status: PaymentStatus.FAILED,
       };
       await this.updateOrderFirestore(query['vnp_TxnRef'], paymentOrder);
-      return { success: false, message: 'Sai chữ ký', data: query };
+      return status;
     }
   }
 
